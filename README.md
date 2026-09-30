@@ -54,3 +54,5 @@ the page reports backend connectivity separately.
 
 CI runs install, lint, strict typechecking, tests, production build, and Docker
 build on pull requests and pushes to `main`.
+
+<!-- public preview E2E -->
