@@ -1,0 +1,21 @@
+apiVersion: ai-qa/v1
+scenarios:
+  - id: seed-notes-listed
+    title: 기본 메모가 목록에 표시된다
+    start: /
+    steps:
+      - "페이지를 열고 Notes 목록의 로딩이 끝날 때까지 기다린다"
+    expect:
+      - "Preview notes 제목이 보인다"
+      - "Notes 목록에 Welcome to preview-hub! 메모가 보인다"
+      - "Notes 목록에 Try adding a note. 메모가 보인다"
+  - id: add-note-shows-first
+    title: 새 메모를 추가하면 목록 맨 위에 표시된다
+    start: /
+    steps:
+      - "페이지를 열고 Notes 목록의 로딩이 끝날 때까지 기다린다"
+      - "현재 시각(날짜, 시, 분, 초, 밀리초 포함)을 넣은 고유한 문장을 만들고 New note 입력칸에 입력한다"
+      - "Add note 버튼을 누르고 Notes 목록이 갱신될 때까지 기다린다"
+    expect:
+      - "방금 입력한 고유한 문장이 Notes 목록의 첫 번째 항목으로 보인다"
+    tags: [smoke]
